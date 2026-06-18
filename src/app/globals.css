@@ -277,7 +277,7 @@ body {
   position: relative;
   max-width: 1600px;
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
 }
