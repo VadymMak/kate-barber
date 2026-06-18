@@ -267,7 +267,7 @@ body {
   position: relative;
   background:
     linear-gradient(to bottom, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.75) 70%, rgba(10,10,10,0.95) 100%),
-    url('https://images.unsplash.com/photo-1585747860019-8ef5a69c5a5b?w=1920&q=80') center/cover no-repeat;
+    url('/hero-barbershop.webp') center/cover no-repeat;
 }
 
 .hero__content { max-width: 800px; }
