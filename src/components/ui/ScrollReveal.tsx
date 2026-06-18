@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef, type ReactNode, type ElementType } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
 
 type Direction = 'up' | 'left' | 'right' | 'scale';
 
@@ -8,7 +8,6 @@ interface Props {
   direction?: Direction;
   delay?: number;
   className?: string;
-  as?: ElementType;
 }
 
 const CLASS: Record<Direction, string> = {
@@ -18,18 +17,20 @@ const CLASS: Record<Direction, string> = {
   scale: 'reveal-scale',
 };
 
-export default function ScrollReveal({
-  children,
-  direction = 'up',
-  delay = 0,
-  className = '',
-  as: Tag = 'div',
-}: Props) {
+export default function ScrollReveal({ children, direction = 'up', delay = 0, className = '' }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // Already in viewport on mount — show immediately
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      setTimeout(() => el.classList.add('is-visible'), delay);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -37,15 +38,15 @@ export default function ScrollReveal({
           observer.unobserve(el);
         }
       },
-      { threshold: 0.12 },
+      { threshold: 0.05, rootMargin: '0px 0px -40px 0px' },
     );
     observer.observe(el);
     return () => observer.disconnect();
   }, [delay]);
 
   return (
-    <Tag ref={ref} className={`${CLASS[direction]}${className ? ` ${className}` : ''}`}>
+    <div ref={ref} className={`${CLASS[direction]}${className ? ` ${className}` : ''}`}>
       {children}
-    </Tag>
+    </div>
   );
 }
