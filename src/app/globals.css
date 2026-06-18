@@ -265,15 +265,14 @@ body {
 
 /* ===== HERO ===== */
 .hero {
-  min-height: 80vh;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 0 max(2rem, calc((100vw - 1440px) / 2 + 2rem)) 5rem;
   position: relative;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.75)),
-    url('/hero-barbershop.webp') center/cover no-repeat;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.72)), url('/hero-barbershop.webp') center/cover no-repeat;
 }
 
 .hero__content { max-width: 800px; }
