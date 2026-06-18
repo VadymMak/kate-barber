@@ -106,7 +106,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     alt: 'Barber práca 1',
   },
   {
-    src: 'https://images.unsplash.com/photo-1585747860019-8ef5a69c5a5b?w=800&q=80',
+    src: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80',
     alt: 'Barber práca 2',
   },
   {
