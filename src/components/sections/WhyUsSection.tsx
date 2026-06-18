@@ -1,6 +1,7 @@
 import { WHY_US_ITEMS } from '@/lib/constants';
 import type { WhyUsItem } from '@/lib/types';
 import GoldDivider from '../ui/GoldDivider';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 function getIcon(icon: string) {
   switch (icon) {
@@ -64,15 +65,17 @@ function WhyUsCard({ item }: { item: WhyUsItem }) {
 export default function WhyUsSection() {
   return (
     <section className="why-us">
-      <div className="section-header">
+      <ScrollReveal direction="up" className="section-header">
         <p className="section-label">Prečo my</p>
         <h2 className="section-title">Čo nás robí výnimočnými</h2>
         <GoldDivider />
-      </div>
+      </ScrollReveal>
 
       <div className="why-us__grid">
-        {WHY_US_ITEMS.map((item) => (
-          <WhyUsCard key={item.icon} item={item} />
+        {WHY_US_ITEMS.map((item, i) => (
+          <ScrollReveal key={item.icon} direction="up" delay={i * 100}>
+            <WhyUsCard item={item} />
+          </ScrollReveal>
         ))}
       </div>
     </section>

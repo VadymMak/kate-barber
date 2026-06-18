@@ -300,13 +300,15 @@ body {
 .hero {
   background: var(--color-bg);
   overflow: hidden;
+  min-height: 100vh;
+  height: 100vh;
 }
 
 .hero__inner {
   position: relative;
   max-width: 1600px;
   margin: 0 auto;
-  min-height: 60vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
 }
