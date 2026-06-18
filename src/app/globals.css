@@ -857,6 +857,7 @@ body {
   font-family: var(--font-body);
 }
 .booking__btn-wa:hover { background: var(--color-whatsapp); color: #fff; }
+.booking__btn-full { flex: unset; width: 100%; cursor: pointer; }
 
 .booking__note {
   text-align: center;

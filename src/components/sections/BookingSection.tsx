@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { WHATSAPP_LINKS, SERVICE_OPTIONS, BARBERS } from '@/lib/constants';
+import { useState, type FormEvent } from 'react';
+import { SERVICE_OPTIONS, BARBERS, WHATSAPP_NUMBER } from '@/lib/constants';
 import WhatsAppIcon from '../ui/WhatsAppIcon';
 import GoldDivider from '../ui/GoldDivider';
 import DateTimePicker from '../ui/DateTimePicker';
@@ -16,10 +16,34 @@ export default function BookingSection() {
     setSelectedTime(time);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    alert('Ďakujeme! Potvrdenie vám pošleme cez WhatsApp.');
-  };
+    const data = new FormData(e.currentTarget);
+
+    const name    = String(data.get('name')    ?? '').trim();
+    const phone   = String(data.get('phone')   ?? '').trim();
+    const service = String(data.get('service') ?? '').trim();
+    const barber  = String(data.get('barber')  ?? '').trim();
+    const note    = String(data.get('note')    ?? '').trim();
+
+    const date = selectedDate ?? '';
+    const time = selectedTime ?? '';
+
+    const lines = [
+      '📅 *Rezervácia — Kate Barber Studio*',
+      '',
+      `👤 Meno: ${name}`,
+      `📞 Telefón: ${phone}`,
+      `✂️ Služba: ${service}`,
+      barber ? `👩 Barber: ${barber}`    : '',
+      date   ? `📆 Dátum: ${date}`       : '',
+      time   ? `🕐 Čas: ${time}`         : '',
+      note   ? `💬 Poznámka: ${note}`    : '',
+    ].filter(Boolean).join('\n');
+
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines)}`;
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+  }
 
   return (
     <section id="rezervacia" className="booking">
@@ -28,7 +52,7 @@ export default function BookingSection() {
         <h2 className="section-title">Zarezervujte si termín</h2>
         <GoldDivider />
         <p className="section-subtitle">
-          Vyberte si deň, čas a službu. Alebo nás kontaktujte cez WhatsApp.
+          Vyplňte formulár — otvoríme WhatsApp s vašimi údajmi.
         </p>
       </ScrollReveal>
 
@@ -39,7 +63,7 @@ export default function BookingSection() {
             <div className="booking__form-row">
               <div>
                 <label className="booking__label">Služba</label>
-                <select required className="booking__select">
+                <select name="service" required className="booking__select">
                   <option value="">Vyberte službu...</option>
                   {SERVICE_OPTIONS.map((opt) => (
                     <option key={opt} value={opt}>{opt}</option>
@@ -48,7 +72,7 @@ export default function BookingSection() {
               </div>
               <div>
                 <label className="booking__label">Barber</label>
-                <select className="booking__select">
+                <select name="barber" className="booking__select">
                   <option value="">Bez preferencie</option>
                   {BARBERS.map((barber) => (
                     <option key={barber} value={barber}>{barber}</option>
@@ -62,8 +86,6 @@ export default function BookingSection() {
               <div className="booking__picker-wrap">
                 <DateTimePicker onSelect={handleDateTimeSelect} />
               </div>
-              <input type="hidden" name="date" value={selectedDate} />
-              <input type="hidden" name="time" value={selectedTime} />
             </div>
 
             <div className="booking__form-row">
@@ -71,6 +93,7 @@ export default function BookingSection() {
                 <label className="booking__label">Meno</label>
                 <input
                   type="text"
+                  name="name"
                   placeholder="Vaše meno"
                   required
                   className="booking__input"
@@ -80,6 +103,7 @@ export default function BookingSection() {
                 <label className="booking__label">Telefón</label>
                 <input
                   type="tel"
+                  name="phone"
                   placeholder="+421 9XX XXX XXX"
                   required
                   className="booking__input"
@@ -90,29 +114,22 @@ export default function BookingSection() {
             <div>
               <label className="booking__label">Poznámka (nepovinné)</label>
               <textarea
+                name="note"
                 placeholder="Špeciálne požiadavky alebo poznámky..."
                 className="booking__textarea"
               />
             </div>
 
             <div className="booking__actions">
-              <button type="submit" className="booking__btn-submit">
-                Odoslať rezerváciu
-              </button>
-              <a
-                href={WHATSAPP_LINKS.booking}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="booking__btn-wa"
-              >
+              <button type="submit" className="booking__btn-wa booking__btn-full">
                 <WhatsAppIcon size={18} />
-                Cez WhatsApp
-              </a>
+                Odoslať cez WhatsApp
+              </button>
             </div>
           </form>
 
           <p className="booking__note">
-            Potvrdenie rezervácie vám pošleme cez WhatsApp alebo SMS do 30 minút.
+            Po kliknutí sa otvorí WhatsApp s vyplnenými údajmi. Odpovedáme do 30 minút.
           </p>
         </div>
       </ScrollReveal>
