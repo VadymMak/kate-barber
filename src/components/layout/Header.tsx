@@ -26,7 +26,7 @@ export default function Header() {
   return (
     <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
       <Link href="#" className="header__logo">
-        Lagoricio <span className="header__logo-span">Barber</span>
+        Kate <span className="header__logo-span">Barber Studio</span>
       </Link>
 
       <nav className="header__nav">

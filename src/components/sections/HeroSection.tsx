@@ -14,7 +14,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="hero__subtitle">
-          Prémiový barber shop v srdci Trenčína. Tradičné techniky, moderný štýl.
+          Prémiový barber studio v Trenčíne pre ženy aj mužov.
         </p>
 
         <div className="hero__buttons">

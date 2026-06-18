@@ -16,13 +16,13 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Lagoricio Barber Shop – Trenčín',
+  title: 'Kate Barber Studio – Trenčín',
   description:
-    'Prémiový barber shop v srdci Trenčína. Tradičné techniky, moderný štýl. Est. 2018.',
-  keywords: ['barber', 'Trenčín', 'holič', 'pánsky strih', 'barber shop', 'Lagoricio'],
+    'Prémiový barber studio v Trenčíne pre ženy aj mužov. Tradičné techniky, moderný štýl.',
+  keywords: ['barber', 'Trenčín', 'holič', 'dámsky strih', 'pánsky strih', 'barber studio', 'Kate Barber'],
   openGraph: {
-    title: 'Lagoricio Barber Shop – Trenčín',
-    description: 'Prémiový barber shop v srdci Trenčína. Est. 2018.',
+    title: 'Kate Barber Studio – Trenčín',
+    description: 'Prémiový barber studio v Trenčíne pre ženy aj mužov.',
     locale: 'sk_SK',
     type: 'website',
   },

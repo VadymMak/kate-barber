@@ -7,7 +7,7 @@ export default function AboutSection() {
         <div className="about__image-wrap">
           <Image
             src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80"
-            alt="Lagoricio interiér"
+            alt="Kate Barber interiér"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="about__image"
@@ -22,8 +22,8 @@ export default function AboutSection() {
             moderný štýl
           </h3>
           <p className="about__text">
-            Lagoricio vznikol v roku 2018 z lásky k tradičnému holičstvu. Náš zakladateľ{' '}
-            <strong>Marco Lagoricio</strong> priniesol do Trenčína to najlepšie z talianskej
+            Kate Barber vznikol v roku 2018 z lásky k tradičnému holičstvu. Náš zakladateľ{' '}
+            <strong>Marco Kate Barber</strong> priniesol do Trenčína to najlepšie z talianskej
             barberskej tradície.
           </p>
           <p className="about__text">

@@ -1,11 +1,11 @@
 import type { Service, TeamMember, Testimonial, GalleryImage, HoursRow, Stat, WhyUsItem } from './types';
 
-export const WHATSAPP_NUMBER = '421900123456';
+export const WHATSAPP_NUMBER = '421900111222';
 
 export const WHATSAPP_LINKS = {
-  booking: `https://wa.me/${WHATSAPP_NUMBER}?text=Dobr%C3%BD%20de%C5%88%2C%20chcel%20by%20som%20si%20rezervova%C5%A5%20term%C3%ADn%20v%20Lagoricio.`,
+  booking: `https://wa.me/${WHATSAPP_NUMBER}?text=Dobr%C3%BD%20de%C5%88%2C%20chcel%20by%20som%20si%20rezervova%C5%A5%20term%C3%ADn%20v%20Kate%20Barber.`,
   location: `https://wa.me/${WHATSAPP_NUMBER}?text=Dobr%C3%BD%20de%C5%88%2C%20kde%20presne%20sa%20nach%C3%A1dzate%3F`,
-  general: `https://wa.me/${WHATSAPP_NUMBER}?text=Dobr%C3%BD%20de%C5%88%2C%20m%C3%A1m%20ot%C3%A1zku%20oh%C4%BEadom%20Lagoricio.`,
+  general: `https://wa.me/${WHATSAPP_NUMBER}?text=Dobr%C3%BD%20de%C5%88%2C%20m%C3%A1m%20ot%C3%A1zku%20oh%C4%BEadom%20Kate%20Barber.`,
 };
 
 export const STATS: Stat[] = [
@@ -60,21 +60,21 @@ export const SERVICES: Service[] = [
 
 export const TEAM: TeamMember[] = [
   {
-    name: 'Marco Lagoricio',
-    role: 'Zakladateľ & hlavný barber',
-    experience: '12 rokov skúseností',
+    name: 'Kate Novák',
+    role: 'Zakladateľka',
+    experience: '8 rokov skúseností',
     photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
   },
   {
-    name: 'Tomáš Horváth',
-    role: 'Senior barber',
-    experience: '8 rokov skúseností',
+    name: 'Lucia Svoboda',
+    role: 'Senior barberka',
+    experience: '5 rokov skúseností',
     photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80',
   },
   {
-    name: 'Daniel Kováč',
-    role: 'Barber & grooming špecialista',
-    experience: '5 rokov skúseností',
+    name: 'Martin Blaho',
+    role: 'Barber',
+    experience: '3 roky skúseností',
     photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80',
   },
 ];
@@ -82,7 +82,7 @@ export const TEAM: TeamMember[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     stars: 5,
-    text: '"Najlepší barber shop v Trenčíne. Marco presne vie, čo chcem, aj keď to neviem vysvetliť. Atmosféra je skvelá, vždy odchádzam spokojný."',
+    text: '"Najlepší barber shop v Trenčíne. Kate presne vie, čo chcem, aj keď to neviem vysvetliť. Atmosféra je skvelá, vždy odchádzam spokojný."',
     author: 'Peter N.',
     date: 'Google recenzia · marec 2026',
   },
@@ -94,7 +94,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     stars: 5,
-    text: '"Klasické holenie tu je zážitok. Horúci uterák, voňavá pena, a výsledok dokonalý. Ako v talianskom filme. Odporúčam každému."',
+    text: '"Klasické holenie tu je zážitok. Horúci uterák, voňavá pena, a výsledok dokonalý. Odporúčam každému."',
     author: 'Jakub V.',
     date: 'Google recenzia · január 2026',
   },
@@ -129,18 +129,18 @@ export const HOURS: HoursRow[] = [
   { day: 'Nedeľa', time: 'Zatvorené' },
 ];
 
-export const BARBERS = ['Marco Lagoricio', 'Tomáš Horváth', 'Daniel Kováč'];
+export const BARBERS = ['Kate Novák', 'Lucia Svoboda', 'Martin Blaho'];
 
 export const SERVICE_OPTIONS = SERVICES.map(s => `${s.name} — ${s.price}`);
 
 export const CONTACT = {
-  address: 'Hviezdoslavova 12\n911 01 Trenčín, Slovensko',
-  phone: '+421 900 123 456',
-  phoneHref: 'tel:+421900123456',
-  email: 'info@lagoricio.sk',
-  emailHref: 'mailto:info@lagoricio.sk',
-  instagram: 'https://instagram.com/lagoricio',
-  facebook: 'https://facebook.com/lagoricio',
+  address: 'Mierové námestie 10\n911 01 Trenčín',
+  phone: '+421 900 111 222',
+  phoneHref: 'tel:+421900111222',
+  email: 'info@katebarber.sk',
+  emailHref: 'mailto:info@katebarber.sk',
+  instagram: 'https://instagram.com/katebarber',
+  facebook: 'https://facebook.com/katebarber',
   mapSrc:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2621.5!2d18.0448!3d48.8945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUzJzQwLjIiTiAxOMKwMDInNDEuMyJF!5e0!3m2!1ssk!2ssk!4v1',
 };
@@ -154,7 +154,7 @@ export const WHY_US_ITEMS: WhyUsItem[] = [
   {
     icon: 'location',
     title: 'Sme v centre Trenčína',
-    description: 'Nájdeš nás na Hviezdoslavovej ulici, 2 minúty od námestia.',
+    description: 'Nájdeš nás na Mierovom námestí, priamo v srdci mesta.',
   },
   {
     icon: 'trend',
@@ -164,7 +164,7 @@ export const WHY_US_ITEMS: WhyUsItem[] = [
   {
     icon: 'star',
     title: 'Sme profesionáli',
-    description: 'Každý barber v tíme má minimálne 5 rokov skúseností.',
+    description: 'Každý barber v tíme má minimálne 3 roky skúseností.',
   },
   {
     icon: 'click',
