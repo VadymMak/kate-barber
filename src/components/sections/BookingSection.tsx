@@ -30,15 +30,14 @@ export default function BookingSection() {
     const time = selectedTime ?? '';
 
     const lines = [
-      '📅 *Rezervácia — Kate Barber Studio*',
-      '',
-      `👤 Meno: ${name}`,
-      `📞 Telefón: ${phone}`,
-      `✂️ Služba: ${service}`,
-      barber ? `👩 Barber: ${barber}`    : '',
-      date   ? `📆 Dátum: ${date}`       : '',
-      time   ? `🕐 Čas: ${time}`         : '',
-      note   ? `💬 Poznámka: ${note}`    : '',
+      `📅 *Rezervácia — Kate Barber Studio*`,
+      `━━━━━━━━━━━━━━━━━━`,
+      `👤 ${name}  📞 ${phone}`,
+      `✂️ ${service}`,
+      barber ? `💈 ${barber}` : '',
+      `📆 ${date}  🕐 ${time}`,
+      note ? `💬 ${note}` : '',
+      `━━━━━━━━━━━━━━━━━━`,
     ].filter(Boolean).join('\n');
 
     const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines)}`;
