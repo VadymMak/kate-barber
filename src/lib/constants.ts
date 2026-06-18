@@ -1,6 +1,6 @@
 import type { Service, TeamMember, Testimonial, GalleryImage, HoursRow, Stat, WhyUsItem } from './types';
 
-export const WHATSAPP_NUMBER = '380938722293';
+export const WHATSAPP_NUMBER = '380938272293';
 
 export const WHATSAPP_LINKS = {
   booking: `https://wa.me/${WHATSAPP_NUMBER}?text=Dobr%C3%BD%20de%C5%88%2C%20chcel%20by%20som%20si%20rezervova%C5%A5%20term%C3%ADn%20v%20Kate%20Barber.`,
@@ -136,7 +136,7 @@ export const SERVICE_OPTIONS = SERVICES.map(s => `${s.name} — ${s.price}`);
 export const CONTACT = {
   address: 'Mierové námestie 10\n911 01 Trenčín',
   phone: '+421 900 111 222',
-  phoneHref: 'tel:+380938722293',
+  phoneHref: 'tel:+380938272293',
   email: 'info@katebarber.sk',
   emailHref: 'mailto:info@katebarber.sk',
   instagram: 'https://instagram.com/katebarber',
