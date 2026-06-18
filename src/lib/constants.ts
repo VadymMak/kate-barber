@@ -102,24 +102,24 @@ export const TESTIMONIALS: Testimonial[] = [
 
 export const GALLERY_IMAGES: GalleryImage[] = [
   {
-    src: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80',
-    alt: 'Barber práca 1',
+    src: '/gallery/gallery-1-chair.webp',
+    alt: 'Štýlové barbershop kreslo',
   },
   {
-    src: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80',
-    alt: 'Barber práca 2',
+    src: '/gallery/gallery-2-haircut.webp',
+    alt: 'Presný strih',
   },
   {
-    src: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&q=80',
-    alt: 'Barber práca 3',
+    src: '/gallery/gallery-3-beard.webp',
+    alt: 'Briadkový styling',
   },
   {
-    src: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=600&q=80',
-    alt: 'Barber práca 4',
+    src: '/gallery/gallery-4-result.webp',
+    alt: 'Výsledok - perfektný strih',
   },
   {
-    src: 'https://images.unsplash.com/photo-1585747860019-8ef5a69c5a5b?w=600&q=80',
-    alt: 'Interiér barber shopu',
+    src: '/gallery/gallery-5-studio.webp',
+    alt: 'Kate Barber Studio interiér',
   },
 ];
 
