@@ -25,69 +25,71 @@ export default function Header() {
 
   return (
     <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
-      <Link href="#" className="header__logo">
-        Kate <span className="header__logo-span">Barber Studio</span>
-      </Link>
+      <div className="header__inner">
+        <Link href="#" className="header__logo">
+          Kate <span className="header__logo-span">Barber Studio</span>
+        </Link>
 
-      <nav className="header__nav">
-        {NAV_LINKS.map((link) => (
-          <a key={link.href} href={link.href} className="header__nav-link">
-            {link.label}
-          </a>
-        ))}
-        <a href="#rezervacia" className="header__btn-reserve">
-          Rezervácia
-        </a>
-        <a
-          href={WHATSAPP_LINKS.booking}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="header__btn-whatsapp"
-        >
-          <WhatsAppIcon size={14} />
-          WhatsApp
-        </a>
-      </nav>
-
-      <button
-        className="header__mobile-btn"
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Menu"
-      >
-        {menuOpen ? '✕' : '☰'}
-      </button>
-
-      {menuOpen && (
-        <nav className="header__mobile-nav">
+        <nav className="header__nav">
           {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="header__mobile-link"
-              onClick={() => setMenuOpen(false)}
-            >
+            <a key={link.href} href={link.href} className="header__nav-link">
               {link.label}
             </a>
           ))}
-          <a
-            href="#rezervacia"
-            className="header__mobile-btn-reserve"
-            onClick={() => setMenuOpen(false)}
-          >
+          <a href="#rezervacia" className="header__btn-reserve">
             Rezervácia
           </a>
           <a
             href={WHATSAPP_LINKS.booking}
             target="_blank"
             rel="noopener noreferrer"
-            className="header__mobile-btn-wa"
-            onClick={() => setMenuOpen(false)}
+            className="header__btn-whatsapp"
           >
-            <WhatsAppIcon size={16} />
+            <WhatsAppIcon size={14} />
             WhatsApp
           </a>
         </nav>
-      )}
+
+        <button
+          className="header__mobile-btn"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Menu"
+        >
+          {menuOpen ? '✕' : '☰'}
+        </button>
+
+        {menuOpen && (
+          <nav className="header__mobile-nav">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="header__mobile-link"
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="#rezervacia"
+              className="header__mobile-btn-reserve"
+              onClick={() => setMenuOpen(false)}
+            >
+              Rezervácia
+            </a>
+            <a
+              href={WHATSAPP_LINKS.booking}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="header__mobile-btn-wa"
+              onClick={() => setMenuOpen(false)}
+            >
+              <WhatsAppIcon size={16} />
+              WhatsApp
+            </a>
+          </nav>
+        )}
+      </div>
     </header>
   );
 }
