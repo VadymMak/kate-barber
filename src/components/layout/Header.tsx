@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { WHATSAPP_LINKS } from '@/lib/constants';
 import WhatsAppIcon from '../ui/WhatsAppIcon';
 
@@ -15,16 +15,40 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      const threshold = 64;
+
+      setScrolled(currentY > 40);
+
+      if (currentY < threshold) {
+        setVisible(true);
+      } else if (currentY > lastScrollY.current + 5) {
+        setVisible(false);
+      } else if (currentY < lastScrollY.current - 5) {
+        setVisible(true);
+      }
+
+      lastScrollY.current = currentY;
+    };
+
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const headerClass = [
+    'header',
+    scrolled ? 'header--scrolled' : '',
+    visible ? '' : 'header--hidden',
+  ].filter(Boolean).join(' ');
+
   return (
-    <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
+    <header className={headerClass}>
       <div className="header__inner">
         <Link href="#" className="header__logo">
           Kate <span className="header__logo-span">Barber Studio</span>
